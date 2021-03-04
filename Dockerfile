@@ -6,6 +6,7 @@ RUN npm install
 
 ADD ./src /app/src
 ADD ./public /app/public
+ADD tsconfig.json /app/
 RUN npm run build
 
 FROM mhart/alpine-node:15
