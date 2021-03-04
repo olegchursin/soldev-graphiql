@@ -1,0 +1,41 @@
+:root {
+  --aon-marine: #007bb6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1em;
+  background-color: var(--aon-marine);;
+  padding: 12px;
+  color: #ffffff;
+}
+.body {
+  height: 100%;
+  flex: 1;
+}
+.aon-logo {
+  width: 60px;
+  margin-inline-end: 40px;
+}
+label {
+  padding-inline-end: 5px;
+}
+input {
+  width: 300px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
