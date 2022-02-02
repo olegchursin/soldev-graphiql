@@ -1,5 +1,5 @@
 :root {
-  --aon-marine: #007bb6;
+  --aon-peacock: #003c55;
 }
 
 body {
@@ -16,9 +16,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1em;
-  background-color: var(--aon-marine);
-  padding: 12px;
+  font-size: 1rem;
+  background-color: var(--aon-peacock);
+  padding: 1rem;
   color: #ffffff;
 }
 .body {

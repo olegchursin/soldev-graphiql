@@ -1,4 +1,4 @@
-import '../node_modules/graphiql/graphiql.css';
+import './graphiql.css';
 
 import GraphiQL from 'graphiql';
 import React, { Component } from 'react';
@@ -28,14 +28,13 @@ class App extends Component<any, IAppState> {
     const search = window.location.search;
     const parameters: IParams = {};
     search
-      .substr(1)
+      .substring(1)
       .split('&')
       .forEach(function (entry) {
         const eq = entry.indexOf('=');
         if (eq >= 0) {
-          parameters[
-            decodeURIComponent(entry.slice(0, eq))
-          ] = decodeURIComponent(entry.slice(eq + 1));
+          parameters[decodeURIComponent(entry.slice(0, eq))] =
+            decodeURIComponent(entry.slice(eq + 1));
         }
       });
 
@@ -85,6 +84,13 @@ class App extends Component<any, IAppState> {
     window.history.replaceState(null, null, newSearch);
   }
 
+  componentDidMount(): void {
+    // override inline styles for Query Variables title
+    const el = document.getElementById('secondary-editor-title');
+    const title: any = el.firstElementChild;
+    title.style.color = 'var(--light-gray)';
+  }
+
   fetcherFactory(url, token) {
     if (this.oldFactory && url === this.oldUrl && token === this.oldToken) {
       return this.oldFactory;
@@ -115,7 +121,7 @@ class App extends Component<any, IAppState> {
           <div>
             <img
               className="aon-logo"
-              src="https://assets.aoncyberplatform.com/aon-logo-mark-white.svg"
+              src="https://assets.aoncyberplatform.com/branding/aon-logo-2021-white.svg"
               alt="Logo"
             />
           </div>
